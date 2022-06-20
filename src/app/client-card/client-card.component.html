@@ -1,0 +1,14 @@
+<!--  -->
+<div class="card m-2" style="width: 18rem">
+  <div class="card-body bg-dark text-light">
+    <h6>id: {{ client.id }}</h6>
+    <h6>description: {{ client.description }}</h6>
+    <h6>initials: {{ client.initials }}</h6>
+    <h6>{{ showMore ? status : "" }}</h6>
+    <h6>{{ showMore ? sector : "" }}</h6>
+
+    <button class="btn btn-link" (click)="onClick()">
+      {{ btnName }}
+    </button>
+  </div>
+</div>

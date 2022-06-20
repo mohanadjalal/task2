@@ -1,0 +1,22 @@
+<div class="mx-auto w-75 border border-dark">
+  <div *ngFor="let x of clients" class="d-inline-block">
+    <app-client-card [client]="x"></app-client-card>
+  </div>
+</div>
+<hr />
+<div class="text-white">
+  <app-account-info [account]="account"></app-account-info>
+</div>
+<br />
+<hr />
+<div class="text-white mx-auto w-75">
+  <button class="btn btn-primary" (click)="cond = !cond">
+    {{ cond ? "click to hide" : "click to show" }}
+  </button>
+  <br />
+
+  <h1 *ngIf="cond">
+    this text id from ngIf directive, it will show on the view when the
+    condition inside ngif is true
+  </h1>
+</div>
