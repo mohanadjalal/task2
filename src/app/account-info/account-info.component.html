@@ -1,49 +1,45 @@
-<div class="container">
-  <nav class="nav border border-white d-flex w-75 row mx-auto">
-    <li class="col-3 btn btn-warning m-2" (click)="showTag('none')">None</li>
-
-    <li [class]="btnClass" (click)="showTag('add')">Main Address</li>
-    <li [class]="btnClass" (click)="showTag('dep')">Departments</li>
-    <li [class]="btnClass" (click)="showTag('con')">Contacts</li>
+<div class="border border-white">
+  <nav class="nav">
+    <li [class]="btnClass" (click)="onClick('address')">Main Address</li>
+    <li [class]="btnClass" (click)="onClick('department')">Departments</li>
+    <li [class]="btnClass" (click)="onClick('contact')">Contacts</li>
   </nav>
-  <div class="w-75 mx-auto my-2 p-2">
+  <div class="mx-auto my-2 p-2">
     <h6>Account ID : {{ account.id }}</h6>
     <h6>Client Name : {{ account.clientName }}</h6>
     <h6>Description: {{ account.description }}</h6>
     <h6>Legal Entity: {{ account.legalEntity }}</h6>
   </div>
-  <div [ngSwitch]="tap" class="w-75 mx-auto my-2 p-2 text-warning">
-    <div *ngSwitchCase="'none'"></div>
-    <div *ngSwitchCase="'add'">
+  <div [ngSwitch]="tap" class="p-2 text-dark">
+    <div *ngSwitchCase="'address'">
       <h1 class="text-center">Main Address</h1>
-      <hr />
-
-      <h6>Address ID : {{ account.address?.id }}</h6>
+      <br />
+      <h6>ID : {{ account.address?.id }}</h6>
       <h6>City : {{ account.address?.city }}</h6>
       <h6>Country: {{ account.address?.country }}</h6>
       <h6>Building Ref: {{ account.address?.buildingRef }}</h6>
       <h6>Fax No: {{ account.address?.faxNo }}</h6>
       <h6>Mobile Number {{ account.address?.mobileNo }}</h6>
     </div>
-    <div *ngSwitchCase="'dep'">
+    <div *ngSwitchCase="'department'">
       <h1 class="text-center">Departments</h1>
 
       <div *ngFor="let dep of account?.departments; last as l">
-        <hr />
-        <h6>Department ID: {{ dep.id }}</h6>
-        <h6>Department Name: {{ dep.name }}</h6>
-        <h6>Department Classification: {{ dep.classification }}</h6>
+        <br />
+        <h6>ID: {{ dep.id }}</h6>
+        <h6>Name: {{ dep.name }}</h6>
+        <h6>Classification: {{ dep.classification }}</h6>
       </div>
     </div>
-    <div *ngSwitchCase="'con'">
+    <div *ngSwitchCase="'contact'">
       <h1 class="text-center">Contacts</h1>
 
       <div *ngFor="let con of account?.contacts; last as l">
-        <hr />
-        <h6>Contact ID: {{ con.id }}</h6>
-        <h6>Contact Name: {{ con.name }}</h6>
-        <h6>Contact Title: {{ con.title }}</h6>
-        <h6>Contact Position: {{ con.position }}</h6>
+        <br />
+        <h6>ID: {{ con.id }}</h6>
+        <h6>Name: {{ con.name }}</h6>
+        <h6>Title: {{ con.title }}</h6>
+        <h6>Position: {{ con.position }}</h6>
       </div>
     </div>
   </div>

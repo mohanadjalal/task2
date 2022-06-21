@@ -7,14 +7,14 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class AccountInfoComponent implements OnInit {
   @Input() account: any;
-  tap: string = 'none';
+  tap: string = '';
   btnClass = 'btn btn-primary col m-2';
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  showTag(v: any): void {
+  onClick(v: any): void {
     this.tap = v;
   }
 }

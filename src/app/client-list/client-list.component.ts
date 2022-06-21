@@ -12,10 +12,8 @@ import { Account } from '../models/account.model';
 export class ClientListComponent implements OnInit {
   clients: Client[] = clientsMock;
   account: Account = accountMock;
-  cond: any;
+  cond: any = true;
   constructor() {}
 
-  ngOnInit(): void {
-    console.log(clientsMock);
-  }
+  ngOnInit(): void {}
 }
